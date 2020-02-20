@@ -1,0 +1,71 @@
+{% comment %} <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>Job Finder &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css' %}">
+    
+    
+    
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+  </head>
+   <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+  
+{% block slide %}
+{% include "partials/slide.html" %}
+{% endblock slide %}
+ 
+  
+    
+    
+{% block polular_categories %}
+{% include "partials/popular_categories.html" %}
+{% endblock polular_categories %}
+    
+
+{% block recent_job %}
+{% include "partials/recent_job.html" %}
+{% endblock recent_job %}
+    
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+   
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}
+   {% endcomment %}
