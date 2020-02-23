@@ -34,7 +34,7 @@ class Jobs(models.Model):
     updated_at = models.DateTimeField(auto_now=True)# update hunxa, update garya matra time basxa
     
     def get_absolute_url(self): # absolute_url gives direct jumb to object view
-        return reverse("single_news", kwargs={"pk": self.pk})
+        return reverse("single_jobs", kwargs={"pk": self.pk})
 
     class Meta:
         verbose_name_plural = "Jobs"
