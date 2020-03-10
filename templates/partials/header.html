@@ -1,13 +1,14 @@
 {% load static %}
     
-    <div class="site-navbar-wrap js-site-navbar bg-white">
+ 
+    
       
       <div class="container">
         <div class="site-navbar bg-light">
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="index.html">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
+                <h2 class="mb-0 site-logo"> <a href="{% url 'home' %}">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">
@@ -15,27 +16,34 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li><a href="categories.html">For Candidates</a></li>
+                    
+                      <li><a href="">For Candidates</a></li>
+                      
                       <li class="has-children">
                         <a href="category.html">For Employees</a>
                         <ul class="dropdown arrow-top">
                           <li><a href="category.html">Category</a></li>
+
+                          {% if request.user.is_authenticated  %}
                           <li><a href="#">Browse Candidates</a></li>
-                          <li><a href="new-post.html">Post a Job</a></li>
+                          
+                          <li><a href="{% url 'create_jobs' %}">Post a Job</a></li>
                           <li><a href="#">Employeer Profile</a></li>
-                          <li class="has-children">
-                            <a href="#">More Links</a>
-                            <ul class="dropdown">
-                              <li><a href="#">Browse Candidates</a></li>
-                              <li><a href="#">Post a Job</a></li>
-                              <li><a href="#">Employeer Profile</a></li>
-                            </ul>
-                          </li>
+                         {% endif %}
 
                         </ul>
                       </li>
                       <li><a href="contact.html">Contact</a></li>
-                      <li><a href="new-post.html"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+                       {% if request.user.is_authenticated  %}
+                  
+                  
+                  <li><a href="{% url 'logout' %}"><span class="btn btn-danger text-light py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Logout</span></a></li>
+                  <li><a href="{% url 'create_jobs' %}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+                    {% else %}
+                  <li><a href="{% url 'login' %}"><span class="btn btn-info text-blue py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Login</span></a></li>
+                  <li><a href="{% url 'user_register' %}"><span class="btn btn-info text-light py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Signup</span></a></li>
+                 
+                    {% endif %}
                     </ul>
                   </div>
                 </nav>
@@ -44,4 +52,6 @@
           </div>
         </div>
       </div>
-    </div>
+
+   
+  

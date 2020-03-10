@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third party
+    "crispy_forms",
+    #custom app
+    "jobs",
+    "accounts",
+    
 ]
 
 MIDDLEWARE = [
@@ -63,6 +69,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'jobs.context_processors.categories',
+                'jobs.context_processors.jobcategories',
+                
             ],
         },
     },
@@ -118,8 +127,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+AUTH_USER_MODEL = "accounts.User"
+
+LOGIN_REDIRECT_URL = "/" # it is used to go to home page after click to login button
+LOGOUT_REDIRECT_URL = "/"
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap3"
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '0be71d87e84ad7'
+EMAIL_HOST_PASSWORD = 'ddc2ed34779dab'
+EMAIL_PORT = '2525'
