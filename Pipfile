@@ -8,6 +8,10 @@ pylint = "*"
 
 [packages]
 django = "==2.2.2"
-
+pillow = "*"
+pylint = "*"
+six = "==1.13.0"
+django-crispy-forms = "==1.8.1"
+python-dotenv = "*"
 [requires]
 python_version = "3.7"

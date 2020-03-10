@@ -1,0 +1,44 @@
+{% extends 'partials/layout.html' %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+     
+{% block polular_categories %}
+
+<div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="section-title">
+             <h1> <span class="caption d-block capital">Categories</span></h1>
+              <h2>{{ jobcategory.title }}</h2>
+            </div>
+
+          {% for jobcategory in jobcategory_jobs_list %}
+
+            <div class="post-entry-2 d-flex">
+              <div class="thumbnail order-md-2" ></div>
+              <div class="contents order-md-1 pl-0">
+                <h2><a href={{ jobs.get_absolute_url }}>{{ jobs.title }}</a></h2>
+                <p class="mb-3">{{ jobs.content }}</p>
+                <div class="post-meta">
+                  <span class="d-block"><a href="#">{{ jobs.author }}</a> in <a href="#">{% for category in jobs.category.all %}
+                  {{ jobs.title }} {% endfor %} </a></span>
+                  <span class="date-read">{{ jobs.created_at }}</span>
+                </div>
+              </div>
+            </div>
+            
+            {% endfor %}
+            
+
+{% endblock polular_categories %}
+    
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+   
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}
+

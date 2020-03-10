@@ -1,4 +1,12 @@
-{% load static %}
+{% extends 'partials/layout.html' %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+  
+
+{% block polular_categories %}
+
 
       <div class="container">
         <div class="row">
@@ -8,16 +16,27 @@
         </div>
         <div class="row">
 
-      {% for category in categories %}
+      
       <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
-            <a href="{% url 'category_jobs' category_id=category.id  %}" class="h-100 feature-item">
+            <a href= "" class="h-100 feature-item">
               <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
-              <h2> {{category.title}} </h2>
+              <h2> {{candidate_jobs.title}} </h2>
               <span class="counting"></span>
                </a>
           </div>
-      {% endfor %}
+     
       </div>
       </div>
       </div>
+
+{% endblock polular_categories %}
     
+
+    
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+   
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}

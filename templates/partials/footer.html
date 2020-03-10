@@ -1,42 +1,42 @@
 {% load static %}
- <footer class="site-footer">
-      <div class="container">
+ 
+  
+    <div class="container">
         
 
         <div class="row">
           <div class="col-md-4">
-            <h3 class="footer-heading mb-4 text-black">About</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-            <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
+            <h3 class="footer-heading mb-4 text-white">About </h3>
+            <p>Since inception in 2009, we have turned out to be number one jobs provider in Nepal with 300 million+ page views with 2.5 million+ progressive visits every month, created 180,000+ success stories and registered 600,000+ job seekers in our database..</p>
+            <p><a href="{% url 'about' %}" class="btn btn-primary pill text-white px-4">Read More</a></p>
           </div>
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-black">Quick Menu</h3>
+                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
                   <ul class="list-unstyled">
-                  
-                  
-                    <li><a  href="#"><h6 class="footer-heading mb-2 text-dark">About </h6></a></li>
-                    <li><a  href="#"><h6 class="footer-heading mb-2 text-dark">Services</h6></a></li>
-                    <li><a href="#"><h6 class="footer-heading mb-2 text-dark">Approach</h6></a></li>
-                    <li><a href="#"><h6 class="footer-heading mb-2 text-dark">Sustainability</h6></a></li>
-                    <li><a href="#"><h6 class="footer-heading mb-2 text-dark">News</h6></a></li>
-                    <li><a href="#"><h6 class="footer-heading mb-2 text-dark">Careers</h6></a></li>
-                    </h6>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Approach</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Careers</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-black">Categories</h3>
+                <h3 class="footer-heading mb-4 text-white">Categories</h3>
                   <ul class="list-unstyled">
+                    
+                
+              {% for jobcategory in categorie %}
 
-                  {% for jobcategory in categorie %}
-
-                    <li><a href="{% url 'categorie_jobs' category_id = category.id }" >
-                    <h6 class="footer-heading mb-2 text-dark">
-                    {{jobcategory.title}} </h6></a></li>
+                    {% comment %} <li><a href="{% url 'jobcategory_jobs' jobcategory_id=jobcategory.id %}"  {% endcomment %}
+                    <li><a
+                   <h2> {{jobcategory.title}} </h2> </a></li>
                     
                   {% endfor %}
-                    
+
+
                   </ul>
               </div>
             </div>
@@ -44,9 +44,7 @@
 
           
           <div class="col-md-2">
-            
-            <h3 class="footer-heading mb-4 text-black"> Social Icons </h3>
-           
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
               <div class="col-md-12">
                 <p>
                   <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
@@ -69,5 +67,5 @@
           
         </div>
       </div>
-    </footer>
-  </div>
+    
+  
