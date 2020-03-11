@@ -15,8 +15,8 @@ class UserRegistrationForm(UserCreationForm):
             try:
                 user_email = User.objects.get(email=data)
             except User.DoesNotExist:
-                # pass
-                return data
+                pass
+                # return data
             else:
                 raise forms.ValidationError("Email already exist")
 

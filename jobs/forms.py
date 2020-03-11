@@ -1,6 +1,6 @@
 from django import forms
 from jobs.models import Category, Jobs, JobCategory
-
+# from accounts.models import Profile, User
 
 
 
