@@ -48,14 +48,8 @@ class JobsDetail(DetailView):
     templatee_name = "jobs/jobs_detail.html"
     context_object_name = "detail_jobs"
 
-class Forcandidate(DetailView):
-    model = Jobs
-    templatee_name = "jobs/forcandidates.html"
-    context_object_name = "candidate_jobs"
 
-
-
-        # front page ko trending news haru ma latest news dekhauna and dynamic banauna
+ # front page ko trending news haru ma latest news dekhauna and dynamic banauna
 class JobsTemplateView(TemplateView):
     template_name = "index.html"
 
@@ -131,3 +125,4 @@ def news_feedback(request, *args, **kwargs):
 def about(request):  
     template = loader.get_template('jobs/about.html')
     return HttpResponse(template.render({"active_tab":"about","request":request})) 
+
