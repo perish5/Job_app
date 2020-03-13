@@ -2,4 +2,3 @@ db.sqlite3
 pipfile.lock
 .vscode
 .gitignore
-.env
